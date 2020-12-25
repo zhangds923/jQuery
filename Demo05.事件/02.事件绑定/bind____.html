@@ -8,12 +8,43 @@
 		<script type="text/javascript">
 		
 			$(function(){
+				/*$("h5").click(function () {
+					alert("h5单击事件，用click绑定");
+				});
+				$("button").click(function () {
+					$("h5").click();
+				});
+				//鼠标移入
+				$("h5").mouseover(function () {
+						console.log("你进来了");
+				});
+				//鼠标移出
+				$("h5").mouseout(function () {
+					console.log("你出去了");
+				});*/
+				//使用bind绑定事件
+				/*$("h5").bind("click mouseover mouseout",function () {
+					console.log("触发了绑定的事件");
+				});
+
+				$("h5").unbind("click mouseover");*/
+				$("h5").live("click",function () {
+					alert("使用live绑定的单击事件");
+				});
+
+				$("<h5 class=\"head\">什么是jQuery?</h5>").appendTo("#panel");
+
+
 				//1.通常绑定事件的方式
 				//2.jQuery提供的绑定方式：bind()函数
 				//3.合并“鼠标移入”和“鼠标移出”事件
 				//4.合并单击事件
 				//5.切换元素可见状态
 				//6.只绑定一次
+			/*	$("h5").one("click mouseover mouseout",function () {
+					console.log("触发了one绑定的事件");
+				});
+				*/
 			});
 		
 		</script>
@@ -24,6 +55,7 @@
 			<div class="content">
 				jQuery是继Prototype之后又一个优秀的JavaScript库，它是一个由 John Resig 创建于2006年1月的开源项目。jQuery凭借简洁的语法和跨平台的兼容性，极大地简化了JavaScript开发人员遍历HTML文档、操作DOM、处理事件、执行动画和开发Ajax。它独特而又优雅的代码风格改变了JavaScript程序员的设计思路和编写程序的方式。
 			</div>
+			<button>按钮1</button>
 		</div>
 	</body>
 
