@@ -73,7 +73,37 @@ a:hover {
 <script type="text/javascript" src="script/jquery-1.7.2.js"></script>
 <script type="text/javascript">
 	$(function() {
+		//基本的初始状态
+		$("li:gt(5):not(:last)").hide();
+		$("div > a").click(function () {
+			//让某些品牌显示或隐藏
+			$("li:gt(5):not(:last)").toggle();
 
+			if($("li:gt(5):not(:last)").is(":hidden")){
+				//判断这些图标是不是隐藏的，是
+				$("a > span").text("显示全部品牌");
+				$("div div").removeClass();
+				$("div div").addClass("showmore");
+				//去掉高亮
+				$("li:contains('明基')").removeClass("promoted");
+				$("li:contains('索尼')").removeClass("promoted");
+			}
+			else{
+				//这些图标不是隐藏的
+
+				$("a > span").text("显示精简品牌");
+				$("div div").removeClass();
+				$("div div").addClass("showless");
+
+				//加高亮
+				$("li:contains('明基')").addClass("promoted");
+				$("li:contains('索尼')").addClass("promoted");
+
+			}
+
+
+			return false;
+		});
 	});
 </script>
 </head>
