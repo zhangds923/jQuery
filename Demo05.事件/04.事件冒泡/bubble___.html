@@ -36,7 +36,15 @@
 		<script type="text/javascript" src="jquery-1.7.2.js"></script>
 		<script type="text/javascript">
 			$(function(){
-				
+				$("#content").click(function () {
+					alert("我是div");
+				});
+				$("span").click(function () {
+					alert("我是span");
+
+					//阻止事件的冒泡
+					return false;
+				});
 			})
 		</script>
 	</head>
